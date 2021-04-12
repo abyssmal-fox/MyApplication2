@@ -18,7 +18,7 @@ android {
     }
     
     signingConfigs {
-        release {
+        platform {
             //签名文件的路径
             storeFile file('/home/software/Downloads/signing/system8909.keystore')
 //            storeFile file('D:\\key\\release6739.keystore')
@@ -34,7 +34,7 @@ android {
              proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
          }*/
 
-        debug {
+        release {
             signingConfig signingConfigs.platform
         }
     }
