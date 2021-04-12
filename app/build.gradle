@@ -18,7 +18,7 @@ android {
     }
     
     signingConfigs {
-        platform {
+        release {
             //签名文件的路径
             storeFile file('/home/software/Downloads/signing/system8909.keystore')
 //            storeFile file('D:\\key\\release6739.keystore')
