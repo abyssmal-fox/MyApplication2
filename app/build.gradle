@@ -16,13 +16,29 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    
+    signingConfigs {
+        platform {
+            //签名文件的路径
+            storeFile file('/home/software/Downloads/signing/system8909.keystore')
+//            storeFile file('D:\\key\\release6739.keystore')
+            storePassword 'android'
+            keyAlias = 'platform'
+            keyPassword 'android'
         }
     }
+
+    buildTypes {
+        /* release {
+             minifyEnabled false
+             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+         }*/
+
+        debug {
+            signingConfig signingConfigs.platform
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
